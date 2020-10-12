@@ -70,6 +70,7 @@ public:
     ///
     ////////////////////////////////////////////////////////////
     void create(unsigned int width, unsigned int height, const Color& color = Color(0, 0, 0));
+    void create(const sf::Vector2u& size, const Color& color = Color(0, 0, 0));
 
     ////////////////////////////////////////////////////////////
     /// \brief Create the image from an array of pixels

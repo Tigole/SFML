@@ -45,6 +45,11 @@ void RectangleShape::setSize(const Vector2f& size)
     update();
 }
 
+void RectangleShape::setSize(float w, float h)
+{
+    setSize(sf::Vector2f(w, h));
+}
+
 
 ////////////////////////////////////////////////////////////
 const Vector2f& RectangleShape::getSize() const

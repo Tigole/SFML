@@ -53,6 +53,13 @@ y(static_cast<T>(vector.y))
 }
 
 
+template <typename T>
+template<typename U>
+Vector2<T>::operator Vector2<U>() const
+{
+    return Vector2<U>(*this);
+}
+
 ////////////////////////////////////////////////////////////
 template <typename T>
 inline Vector2<T> operator -(const Vector2<T>& right)
@@ -114,10 +121,25 @@ inline Vector2<T> operator *(T left, const Vector2<T>& right)
     return Vector2<T>(right.x * left, right.y * left);
 }
 
+template<typename T, typename U>
+inline Vector2<T> operator*(const Vector2<T>& left, U right)
+{
+    return Vector2<T>(right.x * left, right.y * left);
+}
+
 
 ////////////////////////////////////////////////////////////
 template <typename T>
 inline Vector2<T>& operator *=(Vector2<T>& left, T right)
+{
+    left.x *= right;
+    left.y *= right;
+
+    return left;
+}
+
+template<typename T, typename U>
+inline Vector2<T>& operator*=(const Vector2<T>& left, U right)
 {
     left.x *= right;
     left.y *= right;
@@ -133,10 +155,25 @@ inline Vector2<T> operator /(const Vector2<T>& left, T right)
     return Vector2<T>(left.x / right, left.y / right);
 }
 
+template<typename T, typename U>
+inline Vector2<T> operator/(const Vector2<T>& left, U right)
+{
+    return Vector2<T>(left.x / right, left.y / right);
+}
+
 
 ////////////////////////////////////////////////////////////
 template <typename T>
 inline Vector2<T>& operator /=(Vector2<T>& left, T right)
+{
+    left.x /= right;
+    left.y /= right;
+
+    return left;
+}
+
+template<typename T, typename U>
+inline Vector2<T>& operator/=(const Vector2<T>& left, U right)
 {
     left.x /= right;
     left.y /= right;

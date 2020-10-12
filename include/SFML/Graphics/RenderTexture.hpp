@@ -107,6 +107,7 @@ public:
     ///
     ////////////////////////////////////////////////////////////
     bool create(unsigned int width, unsigned int height, const ContextSettings& settings = ContextSettings());
+    bool create(const sf::Vector2u& size, const ContextSettings& settings = ContextSettings());
 
     ////////////////////////////////////////////////////////////
     /// \brief Get the maximum anti-aliasing level supported by the system

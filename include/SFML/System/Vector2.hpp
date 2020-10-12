@@ -69,6 +69,9 @@ public:
     template <typename U>
     explicit Vector2(const Vector2<U>& vector);
 
+    template<typename U>
+    operator Vector2<U>() const;
+
     ////////////////////////////////////////////////////////////
     // Member data
     ////////////////////////////////////////////////////////////
@@ -172,6 +175,9 @@ Vector2<T> operator *(const Vector2<T>& left, T right);
 template <typename T>
 Vector2<T> operator *(T left, const Vector2<T>& right);
 
+template<typename T, typename U>
+Vector2<T> operator*(const Vector2<T>& left, U right);
+
 ////////////////////////////////////////////////////////////
 /// \relates Vector2
 /// \brief Overload of binary operator *=
@@ -188,6 +194,9 @@ Vector2<T> operator *(T left, const Vector2<T>& right);
 template <typename T>
 Vector2<T>& operator *=(Vector2<T>& left, T right);
 
+template<typename T, typename U>
+Vector2<T>& operator*=(const Vector2<T>& left, U right);
+
 ////////////////////////////////////////////////////////////
 /// \relates Vector2
 /// \brief Overload of binary operator /
@@ -200,6 +209,9 @@ Vector2<T>& operator *=(Vector2<T>& left, T right);
 ////////////////////////////////////////////////////////////
 template <typename T>
 Vector2<T> operator /(const Vector2<T>& left, T right);
+
+template<typename T, typename U>
+Vector2<T> operator/(const Vector2<T>& left, U right);
 
 ////////////////////////////////////////////////////////////
 /// \relates Vector2
@@ -216,6 +228,9 @@ Vector2<T> operator /(const Vector2<T>& left, T right);
 ////////////////////////////////////////////////////////////
 template <typename T>
 Vector2<T>& operator /=(Vector2<T>& left, T right);
+
+template<typename T, typename U>
+Vector2<T>& operator/=(const Vector2<T>& left, U right);
 
 ////////////////////////////////////////////////////////////
 /// \relates Vector2

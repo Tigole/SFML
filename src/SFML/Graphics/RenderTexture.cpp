@@ -94,6 +94,11 @@ bool RenderTexture::create(unsigned int width, unsigned int height, const Contex
     return true;
 }
 
+bool RenderTexture::create(const sf::Vector2u& size, const ContextSettings& settings)
+{
+    return create(size.x, size.y, settings);
+}
+
 
 ////////////////////////////////////////////////////////////
 unsigned int RenderTexture::getMaximumAntialiasingLevel()

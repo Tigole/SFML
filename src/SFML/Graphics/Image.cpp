@@ -89,6 +89,11 @@ void Image::create(unsigned int width, unsigned int height, const Color& color)
     }
 }
 
+void Image::create(const sf::Vector2u& size, const Color& color)
+{
+    create(size.x, size.y, color);
+}
+
 
 ////////////////////////////////////////////////////////////
 void Image::create(unsigned int width, unsigned int height, const Uint8* pixels)
