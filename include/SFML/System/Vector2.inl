@@ -124,7 +124,7 @@ inline Vector2<T> operator *(T left, const Vector2<T>& right)
 template<typename T, typename U>
 inline Vector2<T> operator*(const Vector2<T>& left, U right)
 {
-    return Vector2<T>(right.x * left, right.y * left);
+    return Vector2<T>(right * left.x, right * left.y);
 }
 
 
